@@ -6,7 +6,9 @@ var comments = [
   'When you are making a photo it is good to take away a finger out of picture. It is at least unprofessional.',
   'My granny has sneezed ocasionally with photocamera in her hands - and even those photo was better',
   'I has stumbled because of the bananas peel and dropped the camera on my cat - and even those photo was better',
-  'Faces of the people are distorted like somebody is beating them. How could you catch so awful moment?'
+  'Faces of the people are distorted like somebody is beating them. How could you catch so awful moment?',
+  'It is obviously photashop',
+  'Mega photo! Amazing!'
 ];
 
 var descriptions = [
@@ -100,3 +102,15 @@ for (var i = 0; i < photos.length; i++) {
 
 
 similarListElement.appendChild(fragment);
+
+var bigPhoto = document.querySelector('.big-picture');
+bigPhoto.classList.remove('hidden');
+
+bigPhoto.querySelector('img').src = photos[0].url;
+bigPhoto.querySelector('.social__caption').textContent = photos[0].description;
+bigPhoto.querySelector('.likes-count').textContent = photos[0].likes;
+bigPhoto.querySelector('.social__text').textContent = photos[0].comments;
+
+document.querySelector('.social__comments-loader').classList.add('visually-hidden');
+
+document.querySelector('.social__footer').classList.add('visually-hidden');
